@@ -10,7 +10,7 @@ export class ViewAllPatientsComponent {
 
   constructor (private api:ApiService){
 
-    api.fetchPatients().subscribe(
+    api.fetchpatients().subscribe(
       (response)=>{
         this.data=response;
       }

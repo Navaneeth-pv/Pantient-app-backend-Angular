@@ -1,4 +1,4 @@
-import { HttpBackend } from '@angular/common/http';
+import { HttpBackend, HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -6,14 +6,16 @@ import { Injectable } from '@angular/core';
 })
 export class ApiService {
 
-  constructor(private http:HttpBackend) { }
+  constructor(private http:HttpClient) { }
 
   
-  fetch
+  fetchpatients=()=>
+  {
+    return this.http.get("http://localhost:8080/view")
   }
-  
   addPatient=(dataTosend:any)=>
   {
     return this.http.post("http://localhost:8080/add",dataTosend)
   }
+
 }
